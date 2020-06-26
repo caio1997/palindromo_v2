@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 //Desenvolvido por Caio Marinho Coelho
-public class Teste01_v2 {
+public class palindroV2 {
 
 	public static void main(String[] args) {
 		
