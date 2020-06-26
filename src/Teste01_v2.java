@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+//Desenvolvido por Caio Marinho Coelho
 public class Teste01_v2 {
 
 	public static void main(String[] args) {
@@ -15,14 +16,13 @@ public class Teste01_v2 {
 		//Scanner para ler a entrada do usuário
 		Scanner ler = new Scanner(System.in);
 		
-		System.out.print("Digite a palavra desejada: ");
+		System.out.print("Digite a palavra/string desejada: ");
 		
 		//Foram utilizadar as funções TRIM para remover espaços antes, TOUPPERCASE para colocar tudo em maiúsculo e REPLACEALL para remover os espaços entre as strings
-		p1 = ler.nextLine().trim().toUpperCase().replaceAll(" ", "");
+		p1 = ler.nextLine().trim().toUpperCase().replaceAll(" ", "").replaceAll("-","").replace(",", "").replaceAll("!","").replaceAll(":", "");
 		
-		//Variaveis criadas para pegar o tamanho da string
+		//Variavel criada para pegar o tamanho da string
 		Integer l1 = p1.length();
-		Integer cont = l1;
 		
 		//Variável usada para test dentro do laço
 		int test = 0;
@@ -31,7 +31,7 @@ public class Teste01_v2 {
 		for(int x = 0; x < l1/2; x++) {
 			char var1 = p1.charAt(x);
 			//Irá pegar a stringo ao inverso (de tras pra frente)
-			char var2 = p1.charAt(cont-1);
+			char var2 = p1.charAt(l1-(x+1));
 			
 			//Compara se as duas string são iguais
 			if(var1 != var2) {
@@ -40,8 +40,6 @@ public class Teste01_v2 {
 				test ++;
 				break;
 			}
-			//Decremento para percorrer a string ao contrário
-			cont --;
 		}
 		
 		//Verifica se o test == 0, se for quer dizer que ele não teve nenhuma string diferente
